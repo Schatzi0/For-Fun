@@ -1,27 +1,28 @@
-let value = prompt("WHAT WOULD YOU LIKE TO DO?");
+let value = window.prompt("WHAT WOULD YOU LIKE TO DO?");
 const todo = [];
-while(value !=="quit"|| value !=="q")
+while(value !== "quit")
 {
-    if(value === "new")
+     if(value === "list")
     {
-        todovalue = prompt("ENTER THE TASK");
+        console.log("********");
+        for(let i=0; i<todo.length; i++){
+            console.log(`${i}: ${todo[i]}`);
+        }
+        console.log("********");
+    }
+    else if(value === "new")
+    {
+        const todovalue = prompt("ENTER THE TASK");
         todo.push(todovalue);
         console.log(`${todovalue} added to the list`);
     }
-
-    else if(value === "list")
-    {
-        for(let i=0; i<todo.length; i++){
-            console.log("********");
-            console.log(`${i}: ${todo[i]}`);
-            console.log("********");
-        }
-    }
+    
     else if(value === "delete")
     {
-        delitem = prompt("ENTER THE INDEX TO DELETE THE SPECIFIC TASK");
+       const delitem = parseInt(prompt("ENTER THE INDEX TO DELETE THE SPECIFIC TASK"));
         todo.splice(delitem,1);
         console.log("TASK REMOVED");
     }
+    value = window.prompt("WHAT WOULD YOU LIKE TO DO?");
 }
 console.log("QUITING THE APP");

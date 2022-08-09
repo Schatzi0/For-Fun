@@ -1,0 +1,5 @@
+1st-> Enabled the shared folder in vmware options. Then allow access to share the folder from Host machine.
+
+If folder is not visible type the below command.......(create hgfs folder in mnt directory if its not there)
+
+sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other

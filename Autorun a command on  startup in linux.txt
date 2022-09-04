@@ -1,0 +1,29 @@
+Step-1:
+Run a script with root privileges
+sudo nano /etc/rc.local
+
+Step-2:
+Type the command that we want to execute automatically during boot-up, in my case:-
+
+#! /bin/bash
+sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
+exit 0
+
+
+Anything b/w the #! /bin/bash & exit 0 will execute at start-up we can add more command after the 1st one that we want to start during boot
+
+Now we have to make the file executable:
+sudo chmod +x /etc/rc.local
+
+
+
+
+
+
+
+
+The rc.local script in some Linux distributions and Unix systems is a superuser startup script, usually located under the directory /etc/etc/rc.d. The file name rc refers to Run Control.
+ It is important to remember /etc/rc.local is discontinued and replaced.
+
+
+
